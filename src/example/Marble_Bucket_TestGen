@@ -1,0 +1,17 @@
+import random
+
+from TestGenerator import TestGenerator
+from TestGenerator import TestInputs
+
+
+class MarbleBucketTestGen(TestInputs):
+    def inputs(self):
+        x = random.randint(1, 1000)  # number of test cases in (1,10^5)
+        print(x)  # Prints x into input file
+        for z in range(x):
+            print(random.randint(1, 10000000))
+
+
+test = MarbleBucketTestGen()
+gen = TestGenerator(10, test)
+gen.run()
