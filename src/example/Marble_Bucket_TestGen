@@ -4,14 +4,14 @@ from TestGenerator import TestGenerator
 from TestGenerator import TestInputs
 
 
-class MarbleBucketTestGen(TestInputs):
+class MyProblem(TestInputs):
     def inputs(self):
-        x = random.randint(1, 1000)  # number of test cases in (1,10^5)
-        print(x)  # Prints x into input file
-        for z in range(x):
-            print(random.randint(1, 10000000))
+        q = random.randint(1, 1000)  # constraints of value q
+        print(q)
+        for i in range(q):
+            print(random.randint(1, 10000000))  # constraints of value x
 
 
-test = MarbleBucketTestGen()
-gen = TestGenerator(10, test)
-gen.run()
+test_inputs = MyProblem()
+generator = TestGenerator(10, test_inputs)
+generator.run()

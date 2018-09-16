@@ -1,9 +1,8 @@
 import math
 
-pwr = math.pow
-t = int(input())
-while t > 0:
-    a = int(input())
-    sum = (a * (a + 1)) // 2
-    print((int(pwr(sum, 9))) % 1000000007)
-    t -= 1
+q = int(input())
+while q > 0:
+    x = int(input())
+    sum_of_series = (x * (x + 1)) // 2
+    print((int(math.pow(sum_of_series, 9))) % 1000000007)
+    q -= 1
