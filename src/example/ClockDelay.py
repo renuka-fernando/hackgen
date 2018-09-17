@@ -25,5 +25,7 @@ class ClockDelayInputFormat(TestInputFormat):
 
 
 inputFormat = ClockDelayInputFormat()
+
+# try with Language.java('Logic') also
 test_generator = TestGenerator(10, inputFormat, Language.python('Logic'), "ClockDelay")
 test_generator.run()
