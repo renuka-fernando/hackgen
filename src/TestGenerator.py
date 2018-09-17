@@ -11,31 +11,39 @@ class TestInputFormat:
 
 
 class Language:
+    def __init__(self, run_string):
+        self.run_string = run_string
+
+    def get_run_string(self):
+        return self.run_string
+
     @staticmethod
     def python(file_name='Logic'):
-        return 'python %s.py' % file_name
+        return Language('python %s.py' % file_name)
 
     @staticmethod
     def java(file_name='Logic'):
         os.system('javac %s.java' % file_name)
-        return 'java %s' % file_name
+        return Language('java %s' % file_name)
 
     @staticmethod
     def cpp(file_name='Logic'):
         os.system('g++ -o %s %s.cpp' % file_name)
-        return './%s' % file_name
+        return Language('./%s' % file_name)
 
     @staticmethod
     def c(file_name='Logic'):
         os.system('gcc -o %s %s.c' % file_name)
-        return './%s' % file_name
+        return Language('./%s' % file_name)
 
 
 class TestGenerator:
 
-    def __init__(self, test_file_count: int, test_input_format: TestInputFormat, language, name):
+    def __init__(self, test_file_count: int, test_input_format: TestInputFormat, language: Language, name):
         if not isinstance(test_input_format, TestInputFormat):
             raise TypeError("`test_input_format` should be an instance of TestInputFormat")
+        if not isinstance(language, Language):
+            raise TypeError("`language` should be an instance of Language")
         self.test_file_count = test_file_count
         self.test_input_format = test_input_format
         self.language = language
@@ -63,7 +71,7 @@ class TestGenerator:
             for i in range(0, self.test_file_count + 1):
                 print('Generating Output File:', i, file=sys.stderr)
                 start = time.time()
-                os.system(self.language + ' < input/input%02d.txt > output/output%02d.txt' % (i, i))
+                os.system(self.language.get_run_string() + ' < input/input%02d.txt > output/output%02d.txt' % (i, i))
                 end = time.time()
                 print('Time taken to execute Test File %02d: %02f seconds' % (i, end - start), file=sys.stderr)
                 zf.write('input/input%02d.txt' % i)
