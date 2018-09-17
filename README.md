@@ -88,13 +88,15 @@ class ClockDelayInputFormat(TestInputFormat):
 
 
 inputFormat = ClockDelayInputFormat()
+
+# try with Language.java('Logic') also
 test_generator = TestGenerator(10, inputFormat, Language.python('Logic'), "ClockDelay")
 test_generator.run()
 ```
 
 Create instance `inputFormat` of `ClockDelayInputFormat` class. Craete generator using `TestGenerator` class with required information.
 
-#### 03.1 Required Information for TestGenerator
+#### Required Information for TestGenerator
 - Number of Test Files Needs: ***10***
 - Instance of TestInputFormat: ***ClockDelayInputFormat***
 - Language of Solution File (python, java, c++, c) and File Name: ***python(Logic)*** also try with ***java(Logic)***
@@ -102,3 +104,6 @@ Create instance `inputFormat` of `ClockDelayInputFormat` class. Craete generator
 
 ### 04. Find the Zipped Test Files
 See the directory the [Logic.py](src/example/Logic.py) file contains with the name `${Name}-test-cases.zip`.
+
+## Contributions
+Contributions are welcome! :)
