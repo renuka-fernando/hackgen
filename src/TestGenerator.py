@@ -12,9 +12,10 @@ class TestInputs:
 
 class TestGenerator:
 
-    def __init__(self, test_file_count, test_inputs):
+    def __init__(self, test_file_count, test_inputs, name):
         self.test_file_count = test_file_count
         self.test_inputs = test_inputs
+        self.name = name
 
     @staticmethod
     def create_folders():
@@ -25,20 +26,22 @@ class TestGenerator:
             pass
 
     def generate_input_test_files(self):
+        print('Generating Inputs', file=sys.stderr)
         for i in range(0, self.test_file_count + 1):
-            print('Generating:', i, file=sys.stderr)
+            print('Generating Input File:', i, file=sys.stderr)
             sys.stdout = open('input/input%02d.txt' % i, 'w')
             self.test_inputs.inputs()
             sys.stdout.close()
 
     def generate_output_test_files(self):
-        with zipfile.ZipFile('test-cases.zip', 'w', zipfile.ZIP_DEFLATED) as zf:
+        print('Generating Outputs', file=sys.stderr)
+        with zipfile.ZipFile('%s-test-cases.zip' % self.name, 'w', zipfile.ZIP_DEFLATED) as zf:
             for i in range(0, self.test_file_count + 1):
-                print('Zipping:', i, file=sys.stderr)
+                print('Generating Output File:', i, file=sys.stderr)
                 start = time.time()
                 os.system('python logic.py < input/input%02d.txt > output/output%02d.txt' % (i, i))
                 end = time.time()
-                print('Time taken to execute this TC %02f' % (end - start), file=sys.stderr)
+                print('Time taken to execute Test File %02d: %02f seconds' % (i, end - start), file=sys.stderr)
                 zf.write('input/input%02d.txt' % i)
                 zf.write('output/output%02d.txt' % i)
 

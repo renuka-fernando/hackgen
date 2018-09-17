@@ -4,9 +4,10 @@ from TestGenerator import TestGenerator
 from TestGenerator import TestInputs
 
 
-class Clock_Delay_Inputs(TestInputs):
+# Problem https://www.hackerrank.com/contests/hourrank-28/challenges/clock-delay
+class ClockDelayInputs(TestInputs):
     def inputs(self):
-        q = random.randint(1, 1000)  # number of test cases
+        q = random.randint(10, 1000)  # number of test cases
         print(q)
         for n in range(q):
             # constraints for h1 m1 h2 m2 k
@@ -19,6 +20,6 @@ class Clock_Delay_Inputs(TestInputs):
             print(k)
 
 
-test = Clock_Delay_Inputs()
-gen = TestGenerator(10, test)
+test = ClockDelayInputs()
+gen = TestGenerator(10, test, "ClockDelay")
 gen.run()
