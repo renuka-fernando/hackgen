@@ -1,7 +1,5 @@
 # HackerRank Test Case Generator
-Credits to @aashutoshrathi.
-
-Generate test cases for your problem easily.
+Generate test cases for your problem easily. Credits to @aashutoshrathi.
 
 ## Get Started
 For the example lets take the simple problem "[Clock Delay](https://www.hackerrank.com/contests/hourrank-28/challenges/clock-delay)" as the problem have created.
@@ -21,7 +19,7 @@ For the example lets take the simple problem "[Clock Delay](https://www.hackerra
 > - It is guaranteed that ***h1:m1*** is strictly before ***h2:m2***
 
 ### 02. Your Solution Algorithm
-This can be python, java, c++, c file.
+This can be python, java, c++, c file. If you need support other languages plsease update the `Language` class in the [TestGenerator.py](src/TestGenerator.py) file.
 1. Your solution [Logic.py](src/example/Logic.py) file. 
 ```py
 q = int(input())
