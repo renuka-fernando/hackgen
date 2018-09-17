@@ -20,5 +20,5 @@ class ClockDelayInputs(TestInputs):
 
 
 test = ClockDelayInputs()
-gen = TestGenerator(10, test, Language.python(), "ClockDelay")
+gen = TestGenerator(10, test, Language.python('Logic'), "ClockDelay")
 gen.run()

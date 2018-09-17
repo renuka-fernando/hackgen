@@ -12,13 +12,23 @@ class TestInputs:
 
 class Language:
     @staticmethod
-    def python():
-        return 'python Logic.py < input/input%02d.txt > output/output%02d.txt'
+    def python(file_name='Logic'):
+        return 'python %s.py' % file_name
 
     @staticmethod
-    def java():
-        os.system('javac Logic.java')
-        return 'java Logic < input/input%02d.txt > output/output%02d.txt'
+    def java(file_name='Logic'):
+        os.system('javac %s.java' % file_name)
+        return 'java %s' % file_name
+
+    @staticmethod
+    def cpp(file_name='Logic'):
+        os.system('g++ -o %s %s.cpp' % file_name)
+        return './%s' % file_name
+
+    @staticmethod
+    def c(file_name='Logic'):
+        os.system('gcc -o %s %s.c' % file_name)
+        return './%s' % file_name
 
 
 class TestGenerator:
@@ -51,7 +61,7 @@ class TestGenerator:
             for i in range(0, self.test_file_count + 1):
                 print('Generating Output File:', i, file=sys.stderr)
                 start = time.time()
-                os.system(self.language % (i, i))
+                os.system(self.language + ' < input/input%02d.txt > output/output%02d.txt' % (i, i))
                 end = time.time()
                 print('Time taken to execute Test File %02d: %02f seconds' % (i, end - start), file=sys.stderr)
                 zf.write('input/input%02d.txt' % i)
