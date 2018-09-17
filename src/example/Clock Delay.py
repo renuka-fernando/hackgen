@@ -1,7 +1,6 @@
 import random
 
-from TestGenerator import TestGenerator
-from TestGenerator import TestInputs
+from TestGenerator import TestGenerator, TestInputs, Language
 
 
 # Problem https://www.hackerrank.com/contests/hourrank-28/challenges/clock-delay
@@ -21,5 +20,5 @@ class ClockDelayInputs(TestInputs):
 
 
 test = ClockDelayInputs()
-gen = TestGenerator(10, test, "ClockDelay")
+gen = TestGenerator(10, test, Language.python(), "ClockDelay")
 gen.run()

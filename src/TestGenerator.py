@@ -10,11 +10,23 @@ class TestInputs:
         raise NotImplementedError("Input Format is Not Given")
 
 
+class Language:
+    @staticmethod
+    def python():
+        return 'python Logic.py < input/input%02d.txt > output/output%02d.txt'
+
+    @staticmethod
+    def java():
+        os.system('javac Logic.java')
+        return 'java Logic < input/input%02d.txt > output/output%02d.txt'
+
+
 class TestGenerator:
 
-    def __init__(self, test_file_count, test_inputs, name):
+    def __init__(self, test_file_count, test_inputs, language, name):
         self.test_file_count = test_file_count
         self.test_inputs = test_inputs
+        self.language = language
         self.name = name
 
     @staticmethod
@@ -39,7 +51,7 @@ class TestGenerator:
             for i in range(0, self.test_file_count + 1):
                 print('Generating Output File:', i, file=sys.stderr)
                 start = time.time()
-                os.system('python logic.py < input/input%02d.txt > output/output%02d.txt' % (i, i))
+                os.system(self.language % (i, i))
                 end = time.time()
                 print('Time taken to execute Test File %02d: %02f seconds' % (i, end - start), file=sys.stderr)
                 zf.write('input/input%02d.txt' % i)
