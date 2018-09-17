@@ -6,7 +6,7 @@ import zipfile
 
 
 class TestInputFormat:
-    def inputs(self):
+    def inputs(self, difficult_level: int):  # difficult level is in [0-9]
         raise NotImplementedError("Input Format is Not Given")
 
 
@@ -59,16 +59,16 @@ class TestGenerator:
 
     def generate_input_test_files(self):
         print('Generating Inputs', file=sys.stderr)
-        for i in range(0, self.test_file_count + 1):
+        for i in range(0, self.test_file_count):
             print('Generating Input File:', i, file=sys.stderr)
             sys.stdout = open('input/input%02d.txt' % i, 'w')
-            self.test_input_format.inputs()
+            self.test_input_format.inputs(int(i * 10 / (self.test_file_count + 1)))
             sys.stdout.close()
 
     def generate_output_test_files(self):
         print('Generating Outputs', file=sys.stderr)
         with zipfile.ZipFile('%s-test-cases.zip' % self.name, 'w', zipfile.ZIP_DEFLATED) as zf:
-            for i in range(0, self.test_file_count + 1):
+            for i in range(0, self.test_file_count):
                 print('Generating Output File:', i, file=sys.stderr)
                 start = time.time()
                 os.system(self.language.get_run_string() + ' < input/input%02d.txt > output/output%02d.txt' % (i, i))
