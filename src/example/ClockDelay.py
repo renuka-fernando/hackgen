@@ -1,10 +1,10 @@
 import random
 
-from TestGenerator import TestGenerator, TestInputs, Language
+from TestGenerator import TestGenerator, TestInputFormat, Language
 
 
 # Problem https://www.hackerrank.com/contests/hourrank-28/challenges/clock-delay
-class ClockDelayInputs(TestInputs):
+class ClockDelayInputFormat(TestInputFormat):
     def inputs(self):
         q = random.randint(10, 1000)  # number of test cases
         print(q)
@@ -19,6 +19,6 @@ class ClockDelayInputs(TestInputs):
             print(k)
 
 
-test = ClockDelayInputs()
-gen = TestGenerator(10, test, Language.python('Logic'), "ClockDelay")
-gen.run()
+inputFormat = ClockDelayInputFormat()
+test_generator = TestGenerator(10, inputFormat, Language.python('Logic'), "ClockDelay")
+test_generator.run()

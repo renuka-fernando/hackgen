@@ -5,7 +5,7 @@ import time
 import zipfile
 
 
-class TestInputs:
+class TestInputFormat:
     def inputs(self):
         raise NotImplementedError("Input Format is Not Given")
 
