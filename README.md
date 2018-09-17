@@ -1,13 +1,17 @@
 # HackerRank Test Case Generator
+Credits to @aashutoshrathi.
+
+Generate test cases for your problem easily.
+
 ## Get Started
 For the example lets take the simple problem "[Clock Delay](https://www.hackerrank.com/contests/hourrank-28/challenges/clock-delay)" as the problem have created.
 
 ### 01. Identify your Input Format and Constraints
-> ### Input Format
+> #### Input Format
 > - The first line contains ***q***, the number of queries.
 > - Each query is described by two lines. The first line contains four space-separated integers ***h1, m1, h2, m2***. The second line contains a single integer ***k***.
 
-> ### Constraints
+> #### Constraints
 > - 1 ≤ ***q*** ≤ 1000
 > - 0 ≤ ***h1*** < ***23***
 > - 0 ≤ ***h2*** < 24
