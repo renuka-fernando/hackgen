@@ -33,9 +33,11 @@ class Language:
 
 class TestGenerator:
 
-    def __init__(self, test_file_count, test_inputs, language, name):
+    def __init__(self, test_file_count: int, test_input_format: TestInputFormat, language, name):
+        if not isinstance(test_input_format, TestInputFormat):
+            raise TypeError("`test_input_format` should be an instance of TestInputFormat")
         self.test_file_count = test_file_count
-        self.test_inputs = test_inputs
+        self.test_input_format = test_input_format
         self.language = language
         self.name = name
 
@@ -52,7 +54,7 @@ class TestGenerator:
         for i in range(0, self.test_file_count + 1):
             print('Generating Input File:', i, file=sys.stderr)
             sys.stdout = open('input/input%02d.txt' % i, 'w')
-            self.test_inputs.inputs()
+            self.test_input_format.inputs()
             sys.stdout.close()
 
     def generate_output_test_files(self):

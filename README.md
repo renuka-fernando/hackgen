@@ -21,7 +21,8 @@ For the example lets take the simple problem "[Clock Delay](https://www.hackerra
 > - It is guaranteed that ***h1:m1*** is strictly before ***h2:m2***
 
 ### 02. Your Solution Algorithm
-Your solution [Logic.py](src/example/Logic.py) file. This can be python, java, c++, c file.
+This can be python, java, c++, c file.
+1. Your solution [Logic.py](src/example/Logic.py) file. 
 ```py
 q = int(input())
 
@@ -30,6 +31,29 @@ for i in range(q):
     k = int(input())
     delay = (h1 + k - h2) * 60 + m1 - m2
     print(delay)
+```
+2. Your solution [Logic.java](src/example/Logic.java) file.
+```java
+import java.util.Scanner;
+
+public class Logic {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int q = scanner.nextInt();
+
+        for (int i = 0; i < q; i++) {
+            int h1, m1, h2, m2, k;
+            h1 = scanner.nextInt();
+            m1 = scanner.nextInt();
+            h2 = scanner.nextInt();
+            m2 = scanner.nextInt();
+            k = scanner.nextInt();
+
+            int delay = (h1 + k - h2) * 60 + m1 - m2;
+            System.out.println(delay);
+        }
+    }
+}
 ```
 
 ### 03. Test Generator File
@@ -68,7 +92,7 @@ Create instance `inputFormat` of `ClockDelayInputFormat` class. Craete generator
 #### 03.1 Required Information for TestGenerator
 - Number of Test Files Needs: ***10***
 - Instance of TestInputFormat: ***ClockDelayInputFormat***
-- Language of Solution File (python, java, c++, c) and File Name: ***python(Logic)***
+- Language of Solution File (python, java, c++, c) and File Name: ***python(Logic)*** also try with ***java(Logic)***
 - Name of the Problem: ***ClockDelay***
 
 ### 04. Find the Zipped Test Files
