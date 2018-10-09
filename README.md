@@ -121,7 +121,7 @@ test_generator.run()
 
 ```
 
-Create a script [runexample.py](runexample.py) to execute the test case generation.
+Create a script [runexamples.py](runexamples.py) to execute the test case generation.
 
 ```py
 from examples.clockdelay import ClockDelayInputFormat
@@ -151,10 +151,10 @@ Create instance `inputFormat` of [`examples.clockdelay.ClockDelayInputFormat`](e
 
 ### 1.4. Find the Zipped Test Files
 
-Execute the script [runexample.py](runexample.py).
+Execute the script [runexample.py](runexamples.py).
 
 Run the following in a terminal.
->`$ python runexample.py`
+>`$ python runexamples.py`
 
 See the file `${Name}-test-cases.zip` contains the script file.
 
