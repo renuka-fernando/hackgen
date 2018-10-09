@@ -34,9 +34,9 @@ For the example lets take the simple problem "[Clock Delay](https://www.hackerra
 
 ### 1.2. Your Solution Algorithm
 
-This can be python, java, c++, c file. If you need support other languages please update the `Language` class in the [language.py](testgenerator/language.py) file.
+This can be python, java, c++, c file. If you need support other languages please update the `Language` class in the [language.py](hackgen/language.py) file.
 
-1. Your solution [logic.py](example/clockdelay/logic.py) file.
+1. Your solution [logic.py](examples/clockdelay/logic.py) file.
 
 ```py
 q = int(input())
@@ -48,7 +48,7 @@ for i in range(q):
     print(delay)
 ```
 
-2. Your solution [Logic.java](example/clockdelay/Logic.java) file.
+2. Your solution [Logic.java](examples/clockdelay/Logic.java) file.
 
 ```java
 import java.util.Scanner;
@@ -75,16 +75,16 @@ public class Logic {
 
 ### 1.3. Define Input Format
 
-Create a file [example.clockdelay.clock_delay_input_format.py](example/clockdelay/clock_delay_input_format.py) in the same directory the [logic.py](example/clockdelay/logic.py) file contains.
+Create a file [examples.clockdelay.clock_delay_input_format.py](examples/clockdelay/clock_delay_input_format.py) in the same directory the [logic.py](examples/clockdelay/logic.py) file contains.
 
-Create the class `ClockDelayInputFormat` extending [testgenerator.TestInputFormat](testgenerator/test_input_format.py) and overriding `inputs(difficult_level: int) -> None` method with constraints and input format identified in the second step.
+Create the class `ClockDelayInputFormat` extending [hackgen.TestInputFormat](hackgen/test_input_format.py) and overriding `inputs(difficult_level: int) -> None` method with constraints and input format identified in the second step.
 
 You can introduce difficulty with using `difficult_level` value which is between 0 and 9 inclusively [0-9].
 
 ```py
 import random
 
-from testgenerator import TestInputFormat
+from hackgen import TestInputFormat
 
 
 class ClockDelayInputFormat(TestInputFormat):
@@ -124,8 +124,8 @@ test_generator.run()
 Create a script [runexample.py](runexample.py) to execute the test case generation.
 
 ```py
-from example.clockdelay import ClockDelayInputFormat
-from testgenerator import TestGenerator, Language
+from examples.clockdelay import ClockDelayInputFormat
+from hackgen import TestGenerator, Language
 
 
 def generate_clock_delay():
@@ -140,7 +140,7 @@ def generate_clock_delay():
 generate_clock_delay()
 ```
 
-Create instance `inputFormat` of [`example.clockdelay.ClockDelayInputFormat`](example/clockdelay/clock_delay_input_format.py) class. Create generator using `testgenerator.TestGenerator` class with required information.
+Create instance `inputFormat` of [`examples.clockdelay.ClockDelayInputFormat`](examples/clockdelay/clock_delay_input_format.py) class. Create generator using `hackgen.TestGenerator` class with required information.
 
 #### 1.3.1. Required Information for TestGenerator
 
@@ -154,7 +154,7 @@ Create instance `inputFormat` of [`example.clockdelay.ClockDelayInputFormat`](ex
 Execute the script [runexample.py](runexample.py).
 
 Run the following in a terminal.
-> python runexample.py
+>`$ python runexample.py`
 
 See the file `${Name}-test-cases.zip` contains the script file.
 

@@ -6,7 +6,7 @@
 
 import random
 
-from testgenerator import TestInputFormat
+from hackgen import TestInputFormat
 
 
 class ClockDelayInputFormat(TestInputFormat):

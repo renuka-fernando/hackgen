@@ -10,8 +10,8 @@ import sys
 import time
 import zipfile
 
-from testgenerator.language import Language
-from testgenerator.test_input_format import TestInputFormat
+from hackgen.language import Language
+from hackgen.test_input_format import TestInputFormat
 
 
 class TestGenerator:

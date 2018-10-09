@@ -4,4 +4,4 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
-from example.clockdelay.clock_delay_input_format import ClockDelayInputFormat
+from examples.clockdelay.clock_delay_input_format import ClockDelayInputFormat
