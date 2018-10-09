@@ -94,7 +94,7 @@ class ClockDelayInputFormat(TestInputFormat):
     diff = [(5, 10), (10, 30), (50, 100), (100, 300), (100, 300),
             (300, 600), (600, 900), (800, 1000), (900, 1000), (950, 1000)]
 
-    def inputs(self, difficult_level):
+    def inputs(self, difficult_level: int):
         q = random.randint(*self.diff[difficult_level])  # number of test cases
         print(q)
         for n in range(q):
@@ -126,7 +126,7 @@ Create instance `inputFormat` of `ClockDelayInputFormat` class. Create generator
 
 ### 1.4. Find the Zipped Test Files
 
-See the directory the [Logic.py](src/example/Logic.py) file contains with the name `${Name}-test-cases.zip`.
+Execute [ClockDelayInputFormat.py](src/example/ClockDelayInputFormat.py) and see the directory the [Logic.py](src/example/Logic.py) file contains with the name `${Name}-test-cases.zip`.
 
 ## 2. License
 HackerRank Test Case Generator is [MIT licensed](./LICENSE.md).

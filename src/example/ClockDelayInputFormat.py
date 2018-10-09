@@ -7,11 +7,11 @@ from TestGenerator import TestGenerator, TestInputFormat, Language
 class ClockDelayInputFormat(TestInputFormat):
     # difficulty levels with test file number
     # difficulty level is [0-9]
-    diff = [(5, 10), (10, 30), (50, 100), (100, 300), (100, 300),
-            (300, 600), (600, 900), (800, 1000), (900, 1000), (950, 1000)]
+    __diff = [(5, 10), (10, 30), (50, 100), (100, 300), (100, 300),
+              (300, 600), (600, 900), (800, 1000), (900, 1000), (950, 1000)]
 
-    def inputs(self, difficult_level):
-        q = random.randint(*self.diff[difficult_level])  # number of test cases
+    def inputs(self, difficult_level: int) -> None:
+        q = random.randint(*self.__diff[difficult_level])  # number of test cases
         print(q)
         for n in range(q):
             # constraints for h1 m1 h2 m2 k
