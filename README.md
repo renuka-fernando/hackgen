@@ -2,9 +2,17 @@
 
 Generate test cases for your problem easily. Credits to @aashutoshrathi.
 
-## Table of contents
+## Table of Contents
 
-## Getting started
+- [Getting Started](#getting-started)
+  - [Identify your Input Format and Constraints](#01-identify-your-input-format-and-constraints)
+  - [Your Solution Algorithm](#02-your-solution-algorithm)
+  - [Define Input Format](#03-define-input-format)
+    - [Required Information for TestGenerator](#required-information-for-testgenerator)
+  - [Find the Zipped Test Files](#04-find-the-zipped-test-files)
+- [Contributions](#contributions)
+
+## Getting Started
 
 For the example lets take the simple problem "[Clock Delay](https://www.hackerrank.com/contests/hourrank-28/challenges/clock-delay)" as the problem you have created.
 
@@ -23,7 +31,7 @@ For the example lets take the simple problem "[Clock Delay](https://www.hackerra
 > - ***h1*** + ***k*** < 24
 > - It is guaranteed that ***h1:m1*** is strictly before ***h2:m2***
 
-### 02. Your solution algorithm
+### 02. Your Solution Algorithm
 
 This can be python, java, c++, c file. If you need support other languages please update the `Language` class in the [TestGenerator.py](src/TestGenerator.py) file.
 
@@ -64,7 +72,7 @@ public class Logic {
 }
 ```
 
-### 03. Input Format class
+### 03. Define Input Format
 
 Create a file [ClockDelayInputFormat.py](src/example/ClockDelayInputFormat.py) in the same directory the [Logic.py](src/example/Logic.py) file contains.
 
