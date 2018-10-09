@@ -10,7 +10,8 @@ Generate test cases for your problem easily. Credits to @aashutoshrathi.
   - [1.3. Define Input Format](#13-define-input-format)
     - [1.3.1. Required Information for TestGenerator](#131-required-information-for-testgenerator)
   - [1.4. Find the Zipped Test Files](#14-find-the-zipped-test-files)
-- [2. Contributions](#2-contributions)
+- [2. License](#2-license)
+- [3. Contributions](#3-contributions)
 
 ## 1. Getting Started
 
@@ -127,6 +128,9 @@ Create instance `inputFormat` of `ClockDelayInputFormat` class. Create generator
 
 See the directory the [Logic.py](src/example/Logic.py) file contains with the name `${Name}-test-cases.zip`.
 
-## 2. Contributions
+## 2. License
+HackerRank Test Case Generator is [MIT licensed](./LICENSE.md).
+
+## 3. Contributions
 
 Contributions are welcome! :)
