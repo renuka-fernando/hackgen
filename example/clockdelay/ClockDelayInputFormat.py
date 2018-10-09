@@ -6,7 +6,7 @@
 
 import random
 
-from TestGenerator import TestGenerator, TestInputFormat, Language
+from testgenerator.TestGenerator import TestGenerator, TestInputFormat, Language
 
 
 class ClockDelayInputFormat(TestInputFormat):
@@ -32,11 +32,3 @@ class ClockDelayInputFormat(TestInputFormat):
             m2 = random.randint(0, (m1 if h1 + k == h2 else 60))
             print(h1, m1, h2, m2)
             print(k)
-
-
-# input format instance
-inputFormat = ClockDelayInputFormat()
-
-# try with Language.java('Logic') also
-test_generator = TestGenerator(10, inputFormat, Language.python('Logic'), "ClockDelay")
-test_generator.run()
