@@ -4,4 +4,15 @@ venv/
 *.zip
 *.class
 *.exe
-*.txt
+
+# Compiled python modules.
+*.pyc
+
+# Persisted models.
+*.pkl
+
+# Setuptools distribution folder.
+hackgen/dist/
+
+# Python egg metadata, regenerated from source files by setuptools.
+hackgen/*.egg-info

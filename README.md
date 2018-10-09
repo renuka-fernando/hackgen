@@ -1,4 +1,5 @@
-# HackerRank Test Case Generator
+# HackGen: HackerRank Test Case Generator
+[![Build Status](https://travis-ci.org/renuka-fernando/hackgen.svg?branch=master)](https://travis-ci.org/renuka-fernando/hackgen)
 
 Generate test cases for your problem easily. Credits to @aashutoshrathi.
 
