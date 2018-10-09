@@ -1,10 +1,15 @@
 # HackerRank Test Case Generator
+
 Generate test cases for your problem easily. Credits to @aashutoshrathi.
 
-## Get Started
-For the example lets take the simple problem "[Clock Delay](https://www.hackerrank.com/contests/hourrank-28/challenges/clock-delay)" as the problem have created.
+## Table of contents
+
+## Getting started
+
+For the example lets take the simple problem "[Clock Delay](https://www.hackerrank.com/contests/hourrank-28/challenges/clock-delay)" as the problem you have created.
 
 ### 01. Identify your Input Format and Constraints
+
 > #### Input Format
 > - The first line contains ***q***, the number of queries.
 > - Each query is described by two lines. The first line contains four space-separated integers ***h1, m1, h2, m2***. The second line contains a single integer ***k***.
@@ -18,9 +23,12 @@ For the example lets take the simple problem "[Clock Delay](https://www.hackerra
 > - ***h1*** + ***k*** < 24
 > - It is guaranteed that ***h1:m1*** is strictly before ***h2:m2***
 
-### 02. Your Solution Algorithm
+### 02. Your solution algorithm
+
 This can be python, java, c++, c file. If you need support other languages please update the `Language` class in the [TestGenerator.py](src/TestGenerator.py) file.
+
 1. Your solution [Logic.py](src/example/Logic.py) file. 
+
 ```py
 q = int(input())
 
@@ -30,7 +38,9 @@ for i in range(q):
     delay = (h1 + k - h2) * 60 + m1 - m2
     print(delay)
 ```
-2. Your solution [Logic.java](src/example/Logic.java) file.
+
+1. Your solution [Logic.java](src/example/Logic.java) file.
+
 ```java
 import java.util.Scanner;
 
@@ -54,12 +64,14 @@ public class Logic {
 }
 ```
 
-### 03. Test Generator Programme
-Create a file [ClockDelay.py](src/example/ClockDelay.py) in the same directory the [Logic.py](src/example/Logic.py) file contains.
+### 03. Input Format class
+
+Create a file [ClockDelayInputFormat.py](src/example/ClockDelayInputFormat.py) in the same directory the [Logic.py](src/example/Logic.py) file contains.
 
 Create the class `ClockDelayInputFormat` extending `TestInputFormat` and overriding `inputs(difficult_level)` method with constraints and input format identified in the second step.
 
-You can introduce difficulty with using `difficult_level` value which is between $0$ and $9$ inclusively $[0-9]$.
+You can introduce difficulty with using `difficult_level` value which is between $0$ and 9 inclusively [0-9].
+
 ```py
 import random
 
@@ -97,13 +109,16 @@ test_generator.run()
 Create instance `inputFormat` of `ClockDelayInputFormat` class. Create generator using `TestGenerator` class with required information.
 
 #### Required Information for TestGenerator
+
 - Number of Test Files Needs: ***10***
 - Instance of TestInputFormat: ***ClockDelayInputFormat***
 - Language of Solution File (python, java, c++, c) and File Name: ***python(Logic)*** also try with ***java(Logic)***
 - Name of the Problem: ***ClockDelay***
 
 ### 04. Find the Zipped Test Files
+
 See the directory the [Logic.py](src/example/Logic.py) file contains with the name `${Name}-test-cases.zip`.
 
 ## Contributions
+
 Contributions are welcome! :)
