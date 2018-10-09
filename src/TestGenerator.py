@@ -28,12 +28,12 @@ class Language:
 
     @staticmethod
     def cpp(file_name='Logic'):
-        os.system('g++ -o %s %s.cpp' % file_name)
-        return Language('./%s' % file_name)
+        os.system('g++ -o %s %s.cpp' % (file_name, file_name))
+        return Language('%s' % file_name)
 
     @staticmethod
     def c(file_name='Logic'):
-        os.system('gcc -o %s %s.c' % file_name)
+        os.system('gcc -o %s %s.c' % (file_name, file_name))
         return Language('./%s' % file_name)
 
 
