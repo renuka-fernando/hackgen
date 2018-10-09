@@ -91,11 +91,11 @@ from TestGenerator import TestGenerator, TestInputFormat, Language
 class ClockDelayInputFormat(TestInputFormat):
     # difficulty levels with test file number
     # difficulty level is [0-9]
-    diff = [(5, 10), (10, 30), (50, 100), (100, 300), (100, 300),
-            (300, 600), (600, 900), (800, 1000), (900, 1000), (950, 1000)]
+    __diff = [(5, 10), (10, 30), (50, 100), (100, 300), (100, 300),
+              (300, 600), (600, 900), (800, 1000), (900, 1000), (950, 1000)]
 
-    def inputs(self, difficult_level: int):
-        q = random.randint(*self.diff[difficult_level])  # number of test cases
+    def inputs(self, difficult_level: int) -> None:
+        q = random.randint(*self.__diff[difficult_level])  # number of test cases
         print(q)
         for n in range(q):
             # constraints for h1 m1 h2 m2 k
@@ -108,11 +108,13 @@ class ClockDelayInputFormat(TestInputFormat):
             print(k)
 
 
+# input format instance
 inputFormat = ClockDelayInputFormat()
 
 # try with Language.java('Logic') also
 test_generator = TestGenerator(10, inputFormat, Language.python('Logic'), "ClockDelay")
 test_generator.run()
+
 ```
 
 Create instance `inputFormat` of `ClockDelayInputFormat` class. Create generator using `TestGenerator` class with required information.
@@ -129,7 +131,7 @@ Create instance `inputFormat` of `ClockDelayInputFormat` class. Create generator
 Execute [ClockDelayInputFormat.py](src/example/ClockDelayInputFormat.py) and see the directory the [Logic.py](src/example/Logic.py) file contains with the name `${Name}-test-cases.zip`.
 
 ## 2. License
-HackerRank Test Case Generator is [MIT licensed](./LICENSE.md).
+HackerRank Test Case Generator is [MIT licensed](./LICENSE).
 
 ## 3. Contributions
 

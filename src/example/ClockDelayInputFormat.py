@@ -1,10 +1,20 @@
+# Copyright (c) 2018 Renuka Fernando
+# All rights reserved.
+#
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
 import random
 
 from TestGenerator import TestGenerator, TestInputFormat, Language
 
 
-# Problem https://www.hackerrank.com/contests/hourrank-28/challenges/clock-delay
 class ClockDelayInputFormat(TestInputFormat):
+    """
+    Input format of Clock Delay challenge.
+    https://www.hackerrank.com/contests/hourrank-28/challenges/clock-delay
+    """
+
     # difficulty levels with test file number
     # difficulty level is [0-9]
     __diff = [(5, 10), (10, 30), (50, 100), (100, 300), (100, 300),
@@ -24,6 +34,7 @@ class ClockDelayInputFormat(TestInputFormat):
             print(k)
 
 
+# input format instance
 inputFormat = ClockDelayInputFormat()
 
 # try with Language.java('Logic') also
