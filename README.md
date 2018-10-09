@@ -4,19 +4,19 @@ Generate test cases for your problem easily. Credits to @aashutoshrathi.
 
 ## Table of Contents
 
-- [Getting Started](#getting-started)
-  - [Identify your Input Format and Constraints](#01-identify-your-input-format-and-constraints)
-  - [Your Solution Algorithm](#02-your-solution-algorithm)
-  - [Define Input Format](#03-define-input-format)
-    - [Required Information for TestGenerator](#required-information-for-testgenerator)
-  - [Find the Zipped Test Files](#04-find-the-zipped-test-files)
-- [Contributions](#contributions)
+- [1. Getting Started](#1-getting-started)
+  - [1.1. Identify your Input Format and Constraints](#11-identify-your-input-format-and-constraints)
+  - [1.2. Your Solution Algorithm](#12-your-solution-algorithm)
+  - [1.3. Define Input Format](#13-define-input-format)
+    - [1.3.1. Required Information for TestGenerator](#131-required-information-for-testgenerator)
+  - [1.4. Find the Zipped Test Files](#14-find-the-zipped-test-files)
+- [2. Contributions](#2-contributions)
 
-## Getting Started
+## 1. Getting Started
 
 For the example lets take the simple problem "[Clock Delay](https://www.hackerrank.com/contests/hourrank-28/challenges/clock-delay)" as the problem you have created.
 
-### 01. Identify your Input Format and Constraints
+### 1.1. Identify your Input Format and Constraints
 
 > #### Input Format
 > - The first line contains ***q***, the number of queries.
@@ -31,7 +31,7 @@ For the example lets take the simple problem "[Clock Delay](https://www.hackerra
 > - ***h1*** + ***k*** < 24
 > - It is guaranteed that ***h1:m1*** is strictly before ***h2:m2***
 
-### 02. Your Solution Algorithm
+### 1.2. Your Solution Algorithm
 
 This can be python, java, c++, c file. If you need support other languages please update the `Language` class in the [TestGenerator.py](src/TestGenerator.py) file.
 
@@ -47,7 +47,7 @@ for i in range(q):
     print(delay)
 ```
 
-1. Your solution [Logic.java](src/example/Logic.java) file.
+2. Your solution [Logic.java](src/example/Logic.java) file.
 
 ```java
 import java.util.Scanner;
@@ -72,7 +72,7 @@ public class Logic {
 }
 ```
 
-### 03. Define Input Format
+### 1.3. Define Input Format
 
 Create a file [ClockDelayInputFormat.py](src/example/ClockDelayInputFormat.py) in the same directory the [Logic.py](src/example/Logic.py) file contains.
 
@@ -116,17 +116,17 @@ test_generator.run()
 
 Create instance `inputFormat` of `ClockDelayInputFormat` class. Create generator using `TestGenerator` class with required information.
 
-#### Required Information for TestGenerator
+#### 1.3.1. Required Information for TestGenerator
 
 - Number of Test Files Needs: ***10***
 - Instance of TestInputFormat: ***ClockDelayInputFormat***
 - Language of Solution File (python, java, c++, c) and File Name: ***python(Logic)*** also try with ***java(Logic)***
 - Name of the Problem: ***ClockDelay***
 
-### 04. Find the Zipped Test Files
+### 1.4. Find the Zipped Test Files
 
 See the directory the [Logic.py](src/example/Logic.py) file contains with the name `${Name}-test-cases.zip`.
 
-## Contributions
+## 2. Contributions
 
 Contributions are welcome! :)
