@@ -11,7 +11,7 @@ For the example lets take the simple problem "[Clock Delay](https://www.hackerra
 
 > #### Constraints
 > - 1 ≤ ***q*** ≤ 1000
-> - 0 ≤ ***h1*** < ***23***
+> - 0 ≤ ***h1*** < 23
 > - 0 ≤ ***h2*** < 24
 > - 0 ≤ ***m1***, ***m2*** < 60
 > - 1 ≤ ***k***
@@ -19,7 +19,7 @@ For the example lets take the simple problem "[Clock Delay](https://www.hackerra
 > - It is guaranteed that ***h1:m1*** is strictly before ***h2:m2***
 
 ### 02. Your Solution Algorithm
-This can be python, java, c++, c file. If you need support other languages plsease update the `Language` class in the [TestGenerator.py](src/TestGenerator.py) file.
+This can be python, java, c++, c file. If you need support other languages please update the `Language` class in the [TestGenerator.py](src/TestGenerator.py) file.
 1. Your solution [Logic.py](src/example/Logic.py) file. 
 ```py
 q = int(input())
@@ -59,7 +59,7 @@ Create a file [ClockDelay.py](src/example/ClockDelay.py) in the same directory t
 
 Create the class `ClockDelayInputFormat` extending `TestInputFormat` and overriding `inputs(difficult_level)` method with constraints and input format identified in the second step.
 
-You can introduce difficulty with using `difficult_level` value which is between 0 and 9 inclusively [0-9].
+You can introduce difficulty with using `difficult_level` value which is between $0$ and $9$ inclusively $[0-9]$.
 ```py
 import random
 
@@ -94,7 +94,7 @@ test_generator = TestGenerator(10, inputFormat, Language.python('Logic'), "Clock
 test_generator.run()
 ```
 
-Create instance `inputFormat` of `ClockDelayInputFormat` class. Craete generator using `TestGenerator` class with required information.
+Create instance `inputFormat` of `ClockDelayInputFormat` class. Create generator using `TestGenerator` class with required information.
 
 #### Required Information for TestGenerator
 - Number of Test Files Needs: ***10***
