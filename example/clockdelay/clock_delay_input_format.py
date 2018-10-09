@@ -6,7 +6,7 @@
 
 import random
 
-from testgenerator.TestGenerator import TestGenerator, TestInputFormat, Language
+from testgenerator import TestInputFormat
 
 
 class ClockDelayInputFormat(TestInputFormat):

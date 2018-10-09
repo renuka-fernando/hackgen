@@ -10,50 +10,8 @@ import sys
 import time
 import zipfile
 
-
-class TestInputFormat:
-    """
-    Input Format of the Algorithm of the solution
-    """
-    def inputs(self, difficult_level: int) -> None:
-        """
-        Override this method with the input format.
-        Generate inputs from random and print the values to be
-        :param difficult_level: [0-9] use this value to adjust difficulty with test file number.
-        :return: None
-        """
-        raise NotImplementedError("Input Format is Not Given")
-
-
-class Language:
-    """
-    Programming Language to compile and run the solution algorithm.
-    """
-
-    def __init__(self, run_string: str) -> None:
-        self.__run_string = run_string
-
-    def get_run_string(self) -> str:
-        return self.__run_string
-
-    @staticmethod
-    def python(file_name: str = 'Logic') -> 'Language':
-        return Language('python %s.py' % file_name)
-
-    @staticmethod
-    def java(file_name: str = 'Logic') -> 'Language':
-        os.system('javac %s.java' % file_name)
-        return Language('java %s' % file_name)
-
-    @staticmethod
-    def cpp(file_name: str = 'Logic') -> 'Language':
-        os.system('g++ -o %s %s.cpp' % (file_name, file_name))
-        return Language('%s' % file_name)
-
-    @staticmethod
-    def c(file_name: str = 'Logic') -> 'Language':
-        os.system('gcc -o %s %s.c' % (file_name, file_name))
-        return Language('./%s' % file_name)
+from testgenerator.language import Language
+from testgenerator.test_input_format import TestInputFormat
 
 
 class TestGenerator:
