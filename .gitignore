@@ -12,7 +12,8 @@ venv/
 *.pkl
 
 # Setuptools distribution folder.
-hackgen/dist/
+python/dist/
+python/build/
 
 # Python egg metadata, regenerated from source files by setuptools.
-hackgen/*.egg-info
+python/*.egg-info

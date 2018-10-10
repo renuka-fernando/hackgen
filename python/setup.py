@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name="hackgen",
@@ -8,6 +8,7 @@ setup(
     license="MIT",
     description="HackerRank Test-Case Generator",
     url="https://github.com/renuka-fernando/hackgen",
+    packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
