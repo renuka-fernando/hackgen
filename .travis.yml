@@ -5,7 +5,7 @@ python:
 
 install:
   - pip install --upgrade pip
-  - pip install -U -r hackgen/requirements.txt
+  - pip install -U -r python/requirements.txt
 
 script:
-  - cd hackgen && python setup.py develop
+  - cd python && python setup.py develop
