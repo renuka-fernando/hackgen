@@ -68,3 +68,6 @@ class TestGenerator:
         self.__generate_output_test_files()
         shutil.rmtree('input')
         shutil.rmtree('output')
+
+        print('************************************************************************************', file=sys.stderr)
+        print('Test Generation Completed!', file=sys.stderr)

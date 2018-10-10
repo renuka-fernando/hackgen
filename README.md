@@ -18,6 +18,7 @@ Generate test cases for your problem easily. Credits to @aashutoshrathi.
 ## 1. Installation in Python
 HackGen is on PyPI, so you can use pip to install it:
 ```bash
+# bash
 $ pip install hackgen
 ```
 After installation, you can [get started!](#2-getting-started)

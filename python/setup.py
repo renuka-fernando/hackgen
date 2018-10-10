@@ -11,7 +11,7 @@ with open("README", "r") as fh:
 
 setup(
     name="hackgen",
-    version="1.0.0",
+    version="1.0.1",
     author="Renuka Fernando",
     author_email="renukapiyumal@gmail.com",
     license="MIT",
