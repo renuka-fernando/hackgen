@@ -5,20 +5,28 @@ Generate test cases for your problem easily. Credits to @aashutoshrathi.
 
 ## Table of Contents
 
-- [1. Getting Started](#1-getting-started)
-  - [1.1. Identify your Input Format and Constraints](#11-identify-your-input-format-and-constraints)
-  - [1.2. Your Solution Algorithm](#12-your-solution-algorithm)
-  - [1.3. Define Input Format](#13-define-input-format)
-    - [1.3.1. Required Information for TestGenerator](#131-required-information-for-testgenerator)
-  - [1.4. Find the Zipped Test Files](#14-find-the-zipped-test-files)
-- [2. License](#2-license)
-- [3. Contributions](#3-contributions)
+- [1. Installation in Python](#1-installation-in-python)
+- [2. Getting Started](#2-getting-started)
+  - [2.1. Identify your Input Format and Constraints](#21-identify-your-input-format-and-constraints)
+  - [2.2. Your Solution Algorithm](#22-your-solution-algorithm)
+  - [2.3. Define Input Format](#23-define-input-format)
+    - [2.3.1. Required Information for TestGenerator](#231-required-information-for-testgenerator)
+  - [2.4. Find the Zipped Test Files](#24-find-the-zipped-test-files)
+- [3. License](#4-license)
+- [4. Contributions](#4-contributions)
 
-## 1. Getting Started
+## 1. Installation in Python
+HackGen is on PyPI, so you can use pip to install it:
+```bash
+$ pip install hackgen
+```
+After installation, you can [get started!](#2-getting-started)
+
+## 2. Getting Started
 
 For the example lets take the simple problem "[Clock Delay](https://www.hackerrank.com/contests/hourrank-28/challenges/clock-delay)" as the problem you have created.
 
-### 1.1. Identify your Input Format and Constraints
+### 2.1. Identify your Input Format and Constraints
 
 > #### Input Format
 > - The first line contains ***q***, the number of queries.
@@ -33,7 +41,7 @@ For the example lets take the simple problem "[Clock Delay](https://www.hackerra
 > - ***h1*** + ***k*** < 24
 > - It is guaranteed that ***h1:m1*** is strictly before ***h2:m2***
 
-### 1.2. Your Solution Algorithm
+### 2.2. Your Solution Algorithm
 
 This can be python, java, c++, c file. If you need support other languages please update the `Language` class in the [language.py](hackgen/language.py) file.
 
@@ -74,18 +82,18 @@ public class Logic {
 }
 ```
 
-### 1.3. Define Input Format
+### 2.3. Define Input Format
 
-Create a file [examples.clockdelay.clock_delay_input_format.py](examples/clockdelay/clock_delay_input_format.py) in the same directory the [logic.py](examples/clockdelay/logic.py) file contains.
+Create a file [clockdelay.clock_delay.py](examples/clockdelay/clock_delay.py) in the same directory the [logic.py](examples/clockdelay/logic.py) file contains.
 
-Create the class `ClockDelayInputFormat` extending [hackgen.TestInputFormat](hackgen/test_input_format.py) and overriding `inputs(difficult_level: int) -> None` method with constraints and input format identified in the second step.
+Create the class `ClockDelayInputFormat` extending [`hackgen.TestInputFormat`](python/hackgen/test_input_format.py) and overriding `inputs(difficult_level: int) -> None` method with constraints and input format identified in the second step.
 
 You can introduce difficulty with using `difficult_level` value which is between 0 and 9 inclusively [0-9].
 
 ```py
 import random
 
-from hackgen import TestInputFormat
+from hackgen import TestInputFormat, TestGenerator, Language
 
 
 class ClockDelayInputFormat(TestInputFormat):
@@ -114,55 +122,37 @@ class ClockDelayInputFormat(TestInputFormat):
 
 
 # input format instance
-inputFormat = ClockDelayInputFormat()
+input_format = ClockDelayInputFormat()
 
 # try with Language.java('Logic') also
-test_generator = TestGenerator(10, inputFormat, Language.python('Logic'), "ClockDelay")
+test_generator = TestGenerator(10, input_format, Language.python('logic'), "ClockDelay")
 test_generator.run()
-
 ```
 
-Create a script [runexamples.py](runexamples.py) to execute the test case generation.
+Create instance `inputFormat` of [`clockdelay.ClockDelayInputFormat`](examples/clockdelay/clock_delay.py) class. Create generator using `hackgen.TestGenerator` class with required information.
 
-```py
-from examples.clockdelay import ClockDelayInputFormat
-from hackgen import TestGenerator, Language
-
-
-def generate_clock_delay():
-    # input format instance
-    input_format = ClockDelayInputFormat()
-
-    # try with Language.java('Logic') also
-    test_generator = TestGenerator(10, input_format, Language.python('logic'), "ClockDelay")
-    test_generator.run()
-
-
-generate_clock_delay()
-```
-
-Create instance `inputFormat` of [`examples.clockdelay.ClockDelayInputFormat`](examples/clockdelay/clock_delay_input_format.py) class. Create generator using `hackgen.TestGenerator` class with required information.
-
-#### 1.3.1. Required Information for TestGenerator
+#### 2.3.1. Required Information for TestGenerator
 
 - Number of Test Files Needs: ***10***
 - Instance of TestInputFormat: ***ClockDelayInputFormat***
-- Language of Solution File (python, java, c++, c) and File Name: ***python(Logic)*** also try with ***java(Logic)***
+- Language of Solution File (python, java, c++, c) and File Name: ***python(logic)*** also try with ***java(Logic)***
 - Name of the Problem: ***ClockDelay***
 
-### 1.4. Find the Zipped Test Files
+### 2.4. Find the Zipped Test Files
 
-Execute the script [runexample.py](runexamples.py).
+Execute the script [clock_delay.py](examples/clockdelay/clock_delay.py).
 
 Run the following in a terminal.
->`$ python runexamples.py`
+```bash
+$ cd examples/clockdelay/ && python clock_delay.py
+```
 
-See the file `${Name}-test-cases.zip` contains the script file.
+See the file `${Name}-test-cases.zip` contains in the directory `examples/clockdelay/`.
 
-## 2. License
+## 3. License
 
 HackerRank Test Case Generator is [MIT licensed](./LICENSE).
 
-## 3. Contributions
+## 4. Contributions
 
 Contributions are welcome! :)
