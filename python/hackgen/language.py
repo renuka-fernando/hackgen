@@ -36,3 +36,7 @@ class Language:
     def c(file_name: str = 'Logic') -> 'Language':
         os.system('gcc -o %s %s.c' % (file_name, file_name))
         return Language('./%s' % file_name)
+
+    @staticmethod
+    def go(file_name: str = 'logic') -> 'Language':
+        return Language('go run %s.go' % file_name)
