@@ -19,6 +19,10 @@ class Language:
         return self.__run_string
 
     @staticmethod
+    def php(file_name: str = 'logic') -> 'Language':
+        return Language('php %s.php' % file_name)
+
+    @staticmethod
     def python(file_name: str = 'logic') -> 'Language':
         return Language('python %s.py' % file_name)
 
