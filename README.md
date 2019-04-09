@@ -1,19 +1,22 @@
 # HackGen: HackerRank Test Case Generator
 [![Build Status](https://travis-ci.org/renuka-fernando/hackgen.svg?branch=master)](https://travis-ci.org/renuka-fernando/hackgen)
+[![HitCount](http://hits.dwyl.io/renuka-fernando/hackgen.svg)](http://hits.dwyl.io/renuka-fernando/hackgen)
 
 Generate test cases for your problem easily. Credits to @aashutoshrathi.
 
 ## Table of Contents
 
-- [1. Installation in Python](#1-installation-in-python)
-- [2. Getting Started](#2-getting-started)
-  - [2.1. Identify your Input Format and Constraints](#21-identify-your-input-format-and-constraints)
-  - [2.2. Your Solution Algorithm](#22-your-solution-algorithm)
-  - [2.3. Define Input Format](#23-define-input-format)
-    - [2.3.1. Required Information for TestGenerator](#231-required-information-for-testgenerator)
-  - [2.4. Find the Zipped Test Files](#24-find-the-zipped-test-files)
-- [3. License](#4-license)
-- [4. Contributions](#4-contributions)
+- [HackGen: HackerRank Test Case Generator](#hackgen-hackerrank-test-case-generator)
+  - [Table of Contents](#table-of-contents)
+  - [1. Installation in Python](#1-installation-in-python)
+  - [2. Getting Started](#2-getting-started)
+    - [2.1. Identify your Input Format and Constraints](#21-identify-your-input-format-and-constraints)
+    - [2.2. Your Solution Algorithm](#22-your-solution-algorithm)
+    - [2.3. Define Input Format](#23-define-input-format)
+      - [2.3.1. Required Information for TestGenerator](#231-required-information-for-testgenerator)
+    - [2.4. Find the Zipped Test Files](#24-find-the-zipped-test-files)
+  - [3. License](#3-license)
+  - [4. Contributions](#4-contributions)
 
 ## 1. Installation in Python
 HackGen is on PyPI, so you can use pip to install it:
